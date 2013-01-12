@@ -35,3 +35,7 @@ But feel free to ask one.
 
 = 1.0 =
 * First release!
+
+== To Do ==
+
+Add ability to only allow cross-domain requests to certain pages.

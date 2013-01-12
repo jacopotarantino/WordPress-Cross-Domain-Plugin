@@ -1,16 +1,72 @@
 <?php
+/*
+Plugin Name: WordPress Cross-Domain
+Plugin URI: http://jacopotarantino.com
+Description: Adds headers via WordPress so you can do AJAX across domains and not run into the access-control-allow-origin error.
+Author: Jacopo Tarantino
+Version: 1
+Author URI: http://jacopotarantino.com
+License: GPLv3 or later
 
-// set up the admin page
+Copyright 2013 Jacopo Tarantino (email: jacopo.tarantino@gmail.com)
 
-//get and scrub the inputs from the page
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
 
-$access_list = "";
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+*/
 
+// ------------------------------------------------------------------
+// Add the access-control-allow-origin header to the wp headers list
+// iff it has a value filled in.
+// ------------------------------------------------------------------
 add_filter('wp_headers','jt_add_origin');
 
 function jt_add_origin($headers) {
-	$headers['Access-Control-Allow-Origin'] = $access_list;
+	if ( get_option('jt_cross_domain_settings') != false ) {
+		
+		$headers['Access-Control-Allow-Origin'] = get_option('jt_cross_domain_settings');
+		return $headers;
+	}
 	return $headers;
+}
+
+
+// ------------------------------------------------------------------
+// Add all the sections, fields and settings during admin_init
+// ------------------------------------------------------------------
+
+function cross_domain_settings_api_init() {
+	add_settings_section('jt_cross_domain_setting_section',
+	'Cross Domain Settings',
+	'jt_cross_domain_output',
+	'general');
+
+	add_settings_field('jt_cross_domain_settings',
+	'Allowed Domains',
+	'jt_cross_domain_callback',
+	'general',
+	'jt_cross_domain_setting_section');
+
+	register_setting('general','jt_cross_domain_settings');
+}
+
+add_action('admin_init', 'cross_domain_settings_api_init');
+
+
+// ------------------------------------------------------------------
+// Settings section callback function
+// ------------------------------------------------------------------
+
+function jt_cross_domain_output() {
+	echo "<p>Enter a comma-separated list of the domains you'd like to allow to access files/pages managed by WordPress<br><br> Or enter an asterisk ( * ) to allow any site to make cross-domain AJAX requests to this site.</p>";
+}
+
+// ------------------------------------------------------------------
+// Callback function for our example setting
+// ------------------------------------------------------------------
+
+function jt_cross_domain_callback() {
+	echo '<input name="jt_cross_domain_settings" class="regular-text" id="jt_cross_domain_settings" type="text" value="' . get_option('jt_cross_domain_settings') . '" class="code" /> <p class="description">(eg. http://example.com, http://store.example.com, http://foo.bar.com)</p>';
 }
 
 ?>
