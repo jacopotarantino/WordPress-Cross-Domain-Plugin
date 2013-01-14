@@ -1,7 +1,7 @@
-=== WordPress Cross Domain Ajax Fixer ===
+=== WordPress Cross Domain Ajax GUI ===
 Contributors: jacopo.vip
-Donate link: http://jacopotarantino.com
-Tags: cross-domain, apache, access-control, wp-headers
+Donate link: http://jacopotarantino.com/wordpress-cross-domain-access-control-allow-origin-plugin/
+Tags: cross-domain, apache, access-control-allow-origin, wp-headers
 Requires at least: 3.5
 Tested up to: 3.5
 Stable tag: trunk
