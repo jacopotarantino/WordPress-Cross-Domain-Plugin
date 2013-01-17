@@ -18,22 +18,21 @@ Simply install the plugin and add a list of domains under Settings > General the
 
 ## License
 
-The WordPress Cross-Domain AJAX GUI is licensed under the GPL v3 or later.
+The WordPress Cross-Domain AJAX GUI is licensed under the Creative Commons Attribution 3.0 Unported License.
 
 > This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License, version 3, as 
-published by the Free Software Foundation.
+it under the terms of the license. Any version of this software including modified and commercial versions must give credit to Jacopo Tarantino for the original software.
 
 > This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-> You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 ## Changelog
+
+### 2 (17 January 2013)
+
+* Moved to Creative Commons Attribution 3.0 Unported License
 
 ### 1.0 (13 January 2013)
 

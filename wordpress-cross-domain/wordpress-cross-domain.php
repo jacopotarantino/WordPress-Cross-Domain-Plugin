@@ -6,13 +6,12 @@ Description: Adds headers via WordPress so you can do AJAX across domains and no
 Author: Jacopo Tarantino
 Version: 1
 Author URI: http://jacopotarantino.com
-License: GPLv3 or later
-
+License: Creative Commons Attribution 3.0 Unported
 Copyright 2013 Jacopo Tarantino (email: jacopo.tarantino@gmail.com)
 
-This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
+This program is free software; you can redistribute it and/or modify it under the terms of the Creative Commons Attribution 3.0 Unported License.
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  Any version of this software including modified and commercial versions must give credit to Jacopo Tarantino for the original software.
 */
 
 // ------------------------------------------------------------------
