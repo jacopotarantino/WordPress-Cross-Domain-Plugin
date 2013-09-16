@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: WordPress Cross-Domain
-Plugin URI: http://jacopotarantino.com
+Plugin Name: JT Cross Domain Ajax GUI
+Plugin URI: http://jacopotarantino.com/wordpress-cross-domain-access-control-allow-origin-plugin/
 Description: Adds headers via WordPress so you can do AJAX across domains and not run into the access-control-allow-origin error.
 Author: Jacopo Tarantino
-Version: 1
+Version: 3.0
 Author URI: http://jacopotarantino.com
 License: Creative Commons Attribution 3.0 Unported
 Copyright 2013 Jacopo Tarantino (email: jacopo.tarantino@gmail.com)
@@ -21,10 +21,22 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 add_filter('wp_headers','jt_add_origin');
 
 function jt_add_origin($headers) {
-	if ( get_option('jt_cross_domain_settings') != false ) {
-		
-		$headers['Access-Control-Allow-Origin'] = get_option('jt_cross_domain_settings');
-		return $headers;
+	if( !empty( $_SERVER['HTTP_REFERER'] ) ) {
+		$ref = $_SERVER['HTTP_REFERER'];
+
+		$jt_acao = get_option('jt_cross_domain_settings');
+
+		if ( $jt_acao != false ) {
+			$sites = explode(",", $jt_acao);
+
+			foreach ($sites as $site) {
+				$pos = strpos($ref, trim($site) );
+				if ( $pos !== false ) {
+					$headers['Access-Control-Allow-Origin'] = trim($site);
+					return $headers;
+				}
+			}
+		}
 	}
 	return $headers;
 }

@@ -1,4 +1,4 @@
-=== WordPress Cross Domain Ajax GUI ===
+=== JT Cross Domain Ajax GUI ===
 Contributors: jacopo.vip
 Donate link: http://jacopotarantino.com/wordpress-cross-domain-access-control-allow-origin-plugin/
 Tags: cross-domain, apache, access-control-allow-origin, wp-headers
@@ -10,7 +10,7 @@ Adds headers via WordPress so you can do AJAX across domains and not run into th
 
 == Description ==
 
-Are you trying to get information from your WordPress site but you have two different domains and keep getting the Access-Control-Allow-Origin error? This plugin adds the correct headers to allow you to access your WordPress site using AJAX from any other domain. 
+Are you trying to get information from your WordPress site but you have two different domains and keep getting the Access-Control-Allow-Origin error? This plugin adds the correct headers to allow you to access your WordPress site using AJAX from any other domain.
 
 Simply install the plugin and add a list of domains under Settings > General then click save. WordPress will then start sending the correct headers to allow you to run cross-domain ajax with no problem.
 
@@ -33,8 +33,17 @@ But feel free to ask one.
 
 == Changelog ==
 
+= 3.0 =
+
+* Updated name to be compliant with WordPress plugin guidelines.
+* Updated CORS code to be W3C spec compliant which also fixed a bug.
+* Various bug/typo fixes.
+
+= 2.0 =
+* Moved to Creative Commons Attribution 3.0 Unported License
+
 = 1.0 =
-* First release!
+* Official Release
 
 == To Do ==
 
